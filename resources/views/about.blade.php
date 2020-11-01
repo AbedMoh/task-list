@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-        <h2> About us </h2>
+        <h2> My name is {{$name}} </h2>
+        <form action="send" method="POST">  
+            @csrf
+            Name:
+        <input type="text" name="myName" id="myName">
+        <input type="submit" value="ok">
+    </form>
 </body>
 </html>

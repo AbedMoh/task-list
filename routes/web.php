@@ -18,10 +18,16 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    return view('about');
+    $name='Abed Bahour';
+    return view('about',compact('name'));
 });
 
 
 Route::get('contact', function () {
     return view('contact');
+});
+
+Route::post('send', function (Request $Request) {
+    $name= $Request->myName;
+    return view('about',compact('name'));
 });
