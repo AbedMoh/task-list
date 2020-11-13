@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +33,35 @@ Route::get('contact', function () {
 Route::post('send', function (Request $Request) {
     $name= $Request->myName;
     return view('about',compact('name'));
+});
+
+
+
+
+
+
+Route::get('tasks', function () {
+    $tasks=[
+       '1' => 'Task 1',
+       '2' => 'Task 2',
+       '3' => 'Task 3',
+       '4' => 'Task 4',
+       '5' => 'Task 5'
+    ];
+    return view('tasks',compact('tasks'));
+   
+});
+
+
+
+Route::get('task/show/{id}', function ($id) {
+    $tasks=[
+        '1' => 'Task 1',
+        '2' => 'Task 2',
+        '3' => 'Task 3',
+        '4' => 'Task 4',
+        '5' => 'Task 5'
+     ];
+     $task = $tasks[$id];
+    return view('show',compact('task'));
 });
