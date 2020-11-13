@@ -49,6 +49,7 @@ Route::get('tasks', function () {
        '5' => 'Task 5'
     ];
     return view('tasks',compact('tasks'));
+    
    
 });
 
