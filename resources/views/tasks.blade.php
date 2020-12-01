@@ -9,9 +9,16 @@
     
 <ul>
 
-    @foreach ($tasks as $key => $task)
-    <li><a href="{{'task/show/'. $key}}">  <h3>   {{$task}}    </h3></a></li>        
+
+
+    @foreach ($tasks as $task)
+<li><a href="tasks/show/{{$task->id}}"><h3>{{$task->title}}</h3></a></li>        
     @endforeach
+
+
+    {{-- @foreach ($tasks as $key => $task)
+    <li><a href="{{'task/show/'. $key}}">  <h3>   {{$task}}    </h3></a></li>        
+    @endforeach --}}
 
 </ul>
 
