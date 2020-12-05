@@ -33,6 +33,13 @@ Route::get('tasks/show/{id}', function($id){
 
 });
 
+Route::get('app', function(){
+
+    $tasks = DB::table('tasks')->get();
+ 
+    return view('todo', compact('tasks'));
+
+});
 
 
 
