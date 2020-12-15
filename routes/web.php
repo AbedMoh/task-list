@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); 
 });
 
 
@@ -33,7 +33,22 @@ Route::get('tasks/show/{id}', function($id){
 
 });
 
+Route::get('app', function(){
 
+    $tasks = DB::table('tasks')->get();
+ 
+    return view('todo', compact('tasks'));
+
+});
+
+
+Route::post('store',function(Request $request){
+
+    DB::table('tasks')->insert([
+        'title'=> $request->title
+    ]);
+    return redirect()->back();
+});
 
 
 
