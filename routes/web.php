@@ -42,6 +42,14 @@ Route::get('app', function(){
 });
 
 
+Route::post('store',function(Request $request){
+
+    DB::table('tasks')->insert([
+        'title'=> $request->title
+    ]);
+    return redirect()->back();
+});
+
 
 
 // Route::get('about', function () {
